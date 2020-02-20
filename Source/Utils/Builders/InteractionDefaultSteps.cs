@@ -1,15 +1,26 @@
 ﻿using System.Linq;
 using Innoactive.Hub.Training.Conditions;
+using Innoactive.Hub.Training.Configuration;
 using Innoactive.Hub.Training.Interaction.Conditions;
 using Innoactive.Hub.Training.SceneObjects;
 using Innoactive.Hub.Training.SceneObjects.Interaction.Properties;
-using Innoactive.Hub.Training.SceneObjects.Properties;
 using Innoactive.Hub.Training.Utils.Builders;
 
 namespace Innoactive.Hub.Training.Utils.Interaction.Builders
 {
     public static class InteractionDefaultSteps
     {
+        
+        /// <summary>
+        /// Gets the <see cref="ISceneObject"/> with given <paramref name="name"/> from the registry.
+        /// </summary>
+        /// <param name="name">Name of scene object.</param>
+        /// <returns><see cref="ISceneObject"/> with given name.</returns>
+        private static ISceneObject GetFromRegistry(string name)
+        {
+            return RuntimeConfigurator.Configuration.SceneObjectRegistry[name];
+        }
+        
         /// <summary>
         /// Get grab step builder.
         /// </summary>
@@ -67,7 +78,7 @@ namespace Innoactive.Hub.Training.Utils.Interaction.Builders
         /// <returns>Configured builder.</returns>
         public static BasicStepBuilder PutIntoSnapZone(string name, string snapZone, params string[] objectsToPut)
         {
-            return PutIntoSnapZone(name, DefaultSteps.GetFromRegistry(snapZone).GetProperty<ISnapZoneProperty>(), objectsToPut.Select(DefaultSteps.GetFromRegistry).Select(t => t.GetProperty<ISnappableProperty>()).ToArray());
+            return PutIntoSnapZone(name, GetFromRegistry(snapZone).GetProperty<ISnapZoneProperty>(), objectsToPut.Select(GetFromRegistry).Select(t => t.GetProperty<ISnappableProperty>()).ToArray());
         }
 
         /// <summary>
@@ -96,7 +107,7 @@ namespace Innoactive.Hub.Training.Utils.Interaction.Builders
         /// <returns>Configured builder.</returns>
         public static BasicStepBuilder Use(string name, params string[] objectsToUse)
         {
-            return Use(name, objectsToUse.Select(DefaultSteps.GetFromRegistry).Select(t => t.GetProperty<IUsableProperty>()).ToArray());
+            return Use(name, objectsToUse.Select(GetFromRegistry).Select(t => t.GetProperty<IUsableProperty>()).ToArray());
         }
 
         /// <summary>
