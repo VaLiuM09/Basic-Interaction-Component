@@ -5,7 +5,6 @@ using Innoactive.Hub.Training.Conditions;
 using Innoactive.Hub.Training.SceneObjects;
 using Innoactive.Hub.Training.SceneObjects.Interaction.Properties;
 using Innoactive.Hub.Training.Utils;
-using Newtonsoft.Json;
 
 namespace Innoactive.Hub.Training.Interaction.Conditions
 {
@@ -66,7 +65,6 @@ namespace Innoactive.Hub.Training.Interaction.Conditions
             }
         }
 
-        [JsonConstructor]
         public GrabbedCondition() : this("")
         {
         }
