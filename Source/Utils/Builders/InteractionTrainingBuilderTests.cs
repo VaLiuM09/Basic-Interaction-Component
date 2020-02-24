@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections;
 using System.Linq;
 using Innoactive.Hub.Training;
@@ -187,3 +188,4 @@ namespace Innoactive.Hub.Unity.Tests.Training.Interaction
         }
     }
 }
+#endif
