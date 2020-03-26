@@ -7,6 +7,9 @@
     public abstract class OnInteractionFrameworkSetup : OnSceneSetup
     {
         /// <inheritdoc />
+        public override int Priority { get; } = 10;
+        
+        /// <inheritdoc />
         public override string Key { get; } = "InteractionFrameworkSetup";
     }
 }
