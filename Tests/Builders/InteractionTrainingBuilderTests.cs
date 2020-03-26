@@ -19,7 +19,7 @@ namespace Innoactive.Creator.Tests.Interaction
 {
     public class InteractionTrainingBuilderTests : RuntimeTests
     {
-        public class DummySnapZoneProperty : LockableProperty, ISnapZoneProperty
+        private class DummySnapZoneProperty : LockableProperty, ISnapZoneProperty
         {
             protected override void InternalSetLocked(bool lockState)
             {
@@ -41,7 +41,7 @@ namespace Innoactive.Creator.Tests.Interaction
             }
         }
         
-        public class DummySnappableProperty : TrainingSceneObjectProperty, ISnappableProperty
+        private class DummySnappableProperty : TrainingSceneObjectProperty, ISnappableProperty
         {
             public event EventHandler<EventArgs> Snapped;
             public event EventHandler<EventArgs> Unsnapped;
@@ -58,7 +58,7 @@ namespace Innoactive.Creator.Tests.Interaction
             }
         }
 
-        public class DummyUsableProperty : LockableProperty, IUsableProperty
+        private class DummyUsableProperty : LockableProperty, IUsableProperty
         {
             protected override void InternalSetLocked(bool lockState)
             {
@@ -69,14 +69,14 @@ namespace Innoactive.Creator.Tests.Interaction
             public event EventHandler<EventArgs> UsageStopped;
             
             public bool IsBeingUsed { get; }
-            
+             
             public void FastForwardUse()
             {
                 throw new NotImplementedException();
             }
         }
 
-        public class DummyTouchableProperty : LockableProperty, ITouchableProperty
+        private class DummyTouchableProperty : LockableProperty, ITouchableProperty
         {
             protected override void InternalSetLocked(bool lockState)
             {
