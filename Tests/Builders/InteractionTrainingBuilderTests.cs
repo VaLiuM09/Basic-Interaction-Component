@@ -83,8 +83,6 @@ namespace Innoactive.Creator.Tests.Interaction
                 throw new NotImplementedException();
             }
 
-            public string test = "Dummy";
-
             public event EventHandler<EventArgs> Touched;
             public event EventHandler<EventArgs> Untouched;
             
