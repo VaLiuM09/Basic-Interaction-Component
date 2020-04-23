@@ -19,7 +19,7 @@ namespace Innoactive.CreatorEditor.BasicInteraction
         /// </summary>
         protected void RemoveMainCamera()
         {
-            if (Camera.main != null)
+            if (Camera.main != null && Camera.main.transform.parent == null)
             {
                 Object.DestroyImmediate(Camera.main.gameObject);
             }
