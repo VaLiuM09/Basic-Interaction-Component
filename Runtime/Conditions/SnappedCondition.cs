@@ -6,6 +6,7 @@ using Innoactive.Creator.Core.Conditions;
 using Innoactive.Creator.Core.Configuration.Modes;
 using Innoactive.Creator.Core.SceneObjects;
 using Innoactive.Creator.Core.Utils;
+using Innoactive.Creator.Core.Validation;
 
 namespace Innoactive.Creator.BasicInteraction.Conditions
 {
@@ -19,10 +20,14 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
         [DataContract(IsReference = true)]
         public class EntityData : IConditionData
         {
+            [Required]
+            [CheckForCollider]
             [DataMember]
             [DisplayName("Object to snap")]
             public ScenePropertyReference<ISnappableProperty> Target { get; set; }
 
+            [Required]
+            [CheckForCollider]
             [DataMember]
             [DisplayName("Zone to snap into")]
             public ScenePropertyReference<ISnapZoneProperty> ZoneToSnapInto { get; set; }
