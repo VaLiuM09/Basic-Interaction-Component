@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Innoactive.Creator.BasicInteraction.Conditions;
+using Innoactive.Creator.BasicInteraction.Properties;
 using Innoactive.Creator.Core;
 using Innoactive.Creator.Core.Validation;
 using Innoactive.CreatorEditor.CourseValidation;
+using UnityEngine;
 
 namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
 {
@@ -28,7 +30,8 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                 {
                     foreach (SnappedCondition snappedCondition in snaps)
                     {
-                        Guid guid = snappedCondition.Data.Target.Value.SceneObject.Guid;
+                        ISnappableProperty property = snappedCondition.Data.Target.Value;
+                        Guid guid = property.SceneObject.Guid;
                         foreach (GrabbedCondition grabbedCondition in grabs.Where(snap => snap.Data.GrabbableProperty.Value.SceneObject.Guid == guid))
                         {
                             reports.Add(new ValidationReportEntry()

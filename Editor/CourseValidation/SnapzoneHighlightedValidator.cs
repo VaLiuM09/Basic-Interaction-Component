@@ -39,12 +39,12 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                 
                 foreach (SnappedCondition snappedCondition in snaps)
                 {
-                    if (snappedCondition.Data.Target.IsEmpty())
+                    if (snappedCondition.Data.ZoneToSnapInto.IsEmpty())
                     {
                         continue;
                     }
                     
-                    Guid snappedGuid = snappedCondition.Data.Target.Value.SceneObject.Guid;
+                    Guid snappedGuid = snappedCondition.Data.ZoneToSnapInto.Value.SceneObject.Guid;
                     foreach (HighlightObjectBehavior highlight in highlights)
                     {
                         if (highlight.Data.ObjectToHighlight.Value.SceneObject.Guid == snappedGuid && foundHighlights.Contains(highlight) == false)
