@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Innoactive.Creator.BasicInteraction.Conditions;
 using Innoactive.Creator.Core;
+using Innoactive.Creator.Core.Validation;
 using Innoactive.CreatorEditor.CourseValidation;
 
 namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
