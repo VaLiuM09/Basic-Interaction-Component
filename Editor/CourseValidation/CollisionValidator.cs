@@ -6,9 +6,17 @@ using Innoactive.CreatorEditor.CourseValidation;
 
 namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
 {
+    /// <summary>
+    /// Implementation of <see cref="BaseValidator{T,TContext}"/> used for validate logic conflicts.
+    /// </summary>
     public abstract class CollisionValidator : BaseValidator<IStep, StepContext>
     {
-        protected List<T> GetBehavior<T>(IStep step)
+        /// <summary>
+        /// Retrieves a list of <see cref="IBehavior"/> of requested type from given <paramref name="step"/>.
+        /// </summary>
+        /// <param name="step">The <see cref="IStep"/> where to retrieve the list of <see cref="IBehavior"/>.</param>
+        /// <typeparam name="T">The desired type of <see cref="IBehavior"/> to retrieve.</typeparam>
+        protected List<T> GetBehavior<T>(IStep step) where T : IBehavior
         {
             List<T> result = new List<T>();
             foreach (IBehavior behavior in step.Data.Behaviors.Data.Behaviors)
@@ -22,7 +30,12 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
             return result;
         }
         
-        protected List<T> GetCondition<T>(ITransition transition)
+        /// <summary>
+        /// Retrieves a list of <see cref="ICondition"/> of requested type from given <paramref name="transition"/>.
+        /// </summary>
+        /// <param name="transition">The <see cref="ITransition"/> where to retrieve the list of <see cref="ICondition"/>.</param>
+        /// <typeparam name="T">The desired type of <see cref="ICondition"/> to retrieve.</typeparam>
+        protected List<T> GetCondition<T>(ITransition transition) where T : ICondition
         {
             List<T> result = new List<T>();
             foreach (ICondition condition in transition.Data.Conditions)

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using Innoactive.Creator.BasicInteraction.Conditions;
-using Innoactive.Creator.BasicInteraction.Properties;
+using System.Collections.Generic;
 using Innoactive.Creator.Core;
 using Innoactive.Creator.Core.Validation;
 using Innoactive.CreatorEditor.CourseValidation;
-using UnityEngine;
+using Innoactive.Creator.BasicInteraction.Conditions;
+using Innoactive.Creator.BasicInteraction.Properties;
 
 namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
 {
@@ -15,16 +14,17 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
     /// </summary>
     public class GrabAndSnapCollisionValidator : CollisionValidator
     {
+        /// <inheritdoc/>
         protected override List<ValidationReportEntry> InternalValidate(IStep obj)
         {
             List<ValidationReportEntry> reports = new List<ValidationReportEntry>();
 
             foreach (ITransition transition in obj.Data.Transitions.Data.Transitions)
             {
-                List<GrabbedCondition> grabs = GetCondition<GrabbedCondition>(transition)
-                    .Where(condition => condition.Data.GrabbableProperty.IsEmpty() == false).ToList();
-                List<SnappedCondition> snaps = GetCondition<SnappedCondition>(transition)
-                    .Where(condition => condition.Data.Target.IsEmpty() == false).ToList();
+                IEnumerable<GrabbedCondition> grabs = GetCondition<GrabbedCondition>(transition)
+                    .Where(condition => condition.Data.GrabbableProperty.IsEmpty() == false);
+                IEnumerable<SnappedCondition> snaps = GetCondition<SnappedCondition>(transition)
+                    .Where(condition => condition.Data.Target.IsEmpty() == false);
 
                 if (grabs.Any() && snaps.Any())
                 {
@@ -32,9 +32,10 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                     {
                         ISnappableProperty property = snappedCondition.Data.Target.Value;
                         Guid guid = property.SceneObject.Guid;
+                        
                         foreach (GrabbedCondition grabbedCondition in grabs.Where(snap => snap.Data.GrabbableProperty.Value.SceneObject.Guid == guid))
                         {
-                            reports.Add(new ValidationReportEntry()
+                            reports.Add(new ValidationReportEntry
                             {
                                 Context = new ConditionContext(grabbedCondition, new TransitionContext(transition, Context)),
                                 Message = "A SnappedCondition and GrabbedCondition is used for the same object. The GrabbedCondition is not required.",

@@ -14,29 +14,25 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
     /// </summary>
     public class SnapzoneHighlightedValidator : CollisionValidator
     {
+        /// <inheritdoc/>
         protected override List<ValidationReportEntry> InternalValidate(IStep obj)
         {
             List<HighlightObjectBehavior> foundHighlights = new List<HighlightObjectBehavior>();
             List<ValidationReportEntry> reports = new List<ValidationReportEntry>();
 
-            List<HighlightObjectBehavior> highlights = GetBehavior<HighlightObjectBehavior>(obj)
-                .Where(behavior => behavior.Data.ObjectToHighlight.IsEmpty() == false).ToList();
+            IEnumerable<HighlightObjectBehavior> highlights = GetBehavior<HighlightObjectBehavior>(obj)
+                .Where(behavior => behavior.Data.ObjectToHighlight.IsEmpty() == false);
             
-            if (highlights.Count == 0)
+            if (highlights.Any() == false)
             {
                 return reports;
             }
             
             foreach (ITransition transition in obj.Data.Transitions.Data.Transitions)
             {
-                List<SnappedCondition> snaps = GetCondition<SnappedCondition>(transition)
-                    .Where(condition => condition.Data.ZoneToSnapInto.IsEmpty() == false).ToList();
+                IEnumerable<SnappedCondition> snaps = GetCondition<SnappedCondition>(transition)
+                    .Where(condition => condition.Data.ZoneToSnapInto.IsEmpty() == false);
 
-                if (snaps.Count == 0)
-                {
-                    continue;
-                }
-                
                 foreach (SnappedCondition snappedCondition in snaps)
                 {
                     if (snappedCondition.Data.ZoneToSnapInto.IsEmpty())
@@ -50,7 +46,7 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                         if (highlight.Data.ObjectToHighlight.Value.SceneObject.Guid == snappedGuid && foundHighlights.Contains(highlight) == false)
                         {
                             foundHighlights.Add(highlight);
-                            reports.Add(new ValidationReportEntry()
+                            reports.Add(new ValidationReportEntry
                             {
                                 Context = new BehaviorContext(highlight, Context),
                                 Message = "A highlight is highlighting a SnapZone, which is automatically highlighted. The HighlightObjectBehavior is not required.",
