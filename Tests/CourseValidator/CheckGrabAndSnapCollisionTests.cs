@@ -55,8 +55,12 @@ namespace Innoactive.CreatorEditor.Tests.CourseValidation
         private class SnapPropertyMock : MonoBehaviour, ISnappableProperty
         {
             public ISceneObject SceneObject { get; set; }
+            
+#pragma warning disable CS0067
             public event EventHandler<EventArgs> Snapped;
             public event EventHandler<EventArgs> Unsnapped;
+#pragma warning restore CS0067
+            
             public bool IsSnapped { get; }
             public bool LockObjectOnSnap { get; }
             public ISnapZoneProperty SnappedZone { get; set; }
@@ -69,16 +73,23 @@ namespace Innoactive.CreatorEditor.Tests.CourseValidation
         private class GrabPropertyMock : MonoBehaviour, IGrabbableProperty
         {
             public ISceneObject SceneObject { get; set; }
+            
+#pragma warning disable CS0067
             public event EventHandler<LockStateChangedEventArgs> Locked;
             public event EventHandler<LockStateChangedEventArgs> Unlocked;
+#pragma warning restore CS0067
+            
             public bool IsLocked { get; }
             public void SetLocked(bool lockState)
             {
                 throw new NotImplementedException();
             }
-
+            
+#pragma warning disable CS0067
             public event EventHandler<EventArgs> Grabbed;
             public event EventHandler<EventArgs> Ungrabbed;
+#pragma warning restore CS0067
+            
             public bool IsGrabbed { get; }
             public void FastForwardGrab()
             {

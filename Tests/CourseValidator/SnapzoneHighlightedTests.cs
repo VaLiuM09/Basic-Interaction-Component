@@ -79,8 +79,12 @@ namespace Innoactive.CreatorEditor.Tests.CourseValidation
         private class HighlightPropertyMock : MonoBehaviour, IHighlightProperty
         {
             public ISceneObject SceneObject { get; set; }
+            
+#pragma warning disable CS0067
             public event EventHandler<EventArgs> Highlighted;
             public event EventHandler<EventArgs> Unhighlighted;
+#pragma warning restore CS0067
+            
             public bool IsHighlighted { get; }
             public void Highlight(Color highlightColor)
             {
@@ -96,16 +100,23 @@ namespace Innoactive.CreatorEditor.Tests.CourseValidation
         private class SnapZonePropertyMock : MonoBehaviour, ISnapZoneProperty
         {
             public ISceneObject SceneObject { get; set; }
+            
+#pragma warning disable CS0067
             public event EventHandler<LockStateChangedEventArgs> Locked;
             public event EventHandler<LockStateChangedEventArgs> Unlocked;
+#pragma warning restore CS0067
+            
             public bool IsLocked { get; }
             public void SetLocked(bool lockState)
             {
                 throw new NotImplementedException();
             }
 
+#pragma warning disable CS0067
             public event EventHandler<EventArgs> ObjectSnapped;
             public event EventHandler<EventArgs> ObjectUnsnapped;
+#pragma warning restore CS0067
+            
             public bool IsObjectSnapped { get; }
             public ISnappableProperty SnappedObject { get; set; }
             public GameObject SnapZoneObject { get; }
