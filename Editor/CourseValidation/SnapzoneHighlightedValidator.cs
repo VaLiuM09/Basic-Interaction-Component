@@ -15,12 +15,12 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
     public class SnapzoneHighlightedValidator : CollisionValidator
     {
         /// <inheritdoc/>
-        protected override List<ValidationReportEntry> InternalValidate(IStep obj)
+        protected override List<EditorReportEntry> InternalValidate(IStep step)
         {
             List<HighlightObjectBehavior> foundHighlights = new List<HighlightObjectBehavior>();
-            List<ValidationReportEntry> reports = new List<ValidationReportEntry>();
+            List<EditorReportEntry> reports = new List<EditorReportEntry>();
 
-            IEnumerable<HighlightObjectBehavior> highlights = GetBehavior<HighlightObjectBehavior>(obj)
+            IEnumerable<HighlightObjectBehavior> highlights = GetBehavior<HighlightObjectBehavior>(step)
                 .Where(behavior => behavior.Data.ObjectToHighlight.IsEmpty() == false);
             
             if (highlights.Any() == false)
@@ -28,7 +28,7 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                 return reports;
             }
             
-            foreach (ITransition transition in obj.Data.Transitions.Data.Transitions)
+            foreach (ITransition transition in step.Data.Transitions.Data.Transitions)
             {
                 IEnumerable<SnappedCondition> snaps = GetCondition<SnappedCondition>(transition)
                     .Where(condition => condition.Data.ZoneToSnapInto.IsEmpty() == false);
@@ -46,9 +46,10 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                         if (highlight.Data.ObjectToHighlight.Value.SceneObject.Guid == snappedGuid && foundHighlights.Contains(highlight) == false)
                         {
                             foundHighlights.Add(highlight);
-                            reports.Add(new ValidationReportEntry
+                            reports.Add(new EditorReportEntry()
                             {
                                 Context = new BehaviorContext(highlight, Context),
+                                Code = 3002,
                                 Message = "A highlight is highlighting a SnapZone, which is automatically highlighted. The HighlightObjectBehavior is not required.",
                                 ErrorLevel = ValidationErrorLevel.ERROR,
                                 Validator = this,

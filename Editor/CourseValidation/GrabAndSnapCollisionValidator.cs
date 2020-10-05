@@ -14,12 +14,11 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
     /// </summary>
     public class GrabAndSnapCollisionValidator : CollisionValidator
     {
-        /// <inheritdoc/>
-        protected override List<ValidationReportEntry> InternalValidate(IStep obj)
+        protected override List<EditorReportEntry> InternalValidate(IStep step)
         {
-            List<ValidationReportEntry> reports = new List<ValidationReportEntry>();
+            List<EditorReportEntry> reports = new List<EditorReportEntry>();
 
-            foreach (ITransition transition in obj.Data.Transitions.Data.Transitions)
+            foreach (ITransition transition in step.Data.Transitions.Data.Transitions)
             {
                 IEnumerable<GrabbedCondition> grabs = GetCondition<GrabbedCondition>(transition)
                     .Where(condition => condition.Data.GrabbableProperty.IsEmpty() == false);
@@ -35,9 +34,10 @@ namespace Innoactive.CreatorEditor.BasicInteraction.CourseValidation
                         
                         foreach (GrabbedCondition grabbedCondition in grabs.Where(snap => snap.Data.GrabbableProperty.Value.SceneObject.Guid == guid))
                         {
-                            reports.Add(new ValidationReportEntry
+                            reports.Add(new EditorReportEntry()
                             {
                                 Context = new ConditionContext(grabbedCondition, new TransitionContext(transition, Context)),
+                                Code = 3001,
                                 Message = "A SnappedCondition and GrabbedCondition is used for the same object. The GrabbedCondition is not required.",
                                 ErrorLevel = ValidationErrorLevel.ERROR,
                                 Validator = this,
