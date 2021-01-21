@@ -7,6 +7,7 @@ using Innoactive.Creator.Core.Configuration.Modes;
 using Innoactive.Creator.Core.SceneObjects;
 using Innoactive.Creator.Core.Utils;
 using Innoactive.Creator.Core.Validation;
+using UnityEngine;
 
 namespace Innoactive.Creator.BasicInteraction.Conditions
 {

@@ -39,13 +39,22 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
 
         private class ActiveProcess : BaseActiveProcessOverCompletable<EntityData>
         {
+            private bool isBeingUsed = false;
+            
             public ActiveProcess(EntityData data) : base(data)
             {
             }
 
+            public override void Start()
+            {
+                base.Start();
+                isBeingUsed = Data.UsableProperty.Value.IsBeingUsed;
+                Data.UsableProperty.Value.UsageStarted += (sender, args) => isBeingUsed = true;
+            }
+
             protected override bool CheckIfCompleted()
             {
-                return Data.UsableProperty.Value.IsBeingUsed;
+                return Data.UsableProperty.Value.IsBeingUsed || isBeingUsed;
             }
         }
 

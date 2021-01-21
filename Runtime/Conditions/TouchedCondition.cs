@@ -36,13 +36,22 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
 
         private class ActiveProcess : BaseActiveProcessOverCompletable<EntityData>
         {
+            private bool isTouched;
+            
             public ActiveProcess(EntityData data) : base(data)
             {
             }
 
+            public override void Start()
+            {
+                base.Start();
+                isTouched = Data.TouchableProperty.Value.IsBeingTouched;
+                Data.TouchableProperty.Value.Touched += (sender, args) => isTouched = true;
+            }
+
             protected override bool CheckIfCompleted()
             {
-                return Data.TouchableProperty.Value.IsBeingTouched;
+                return Data.TouchableProperty.Value.IsBeingTouched || isTouched;
             }
         }
 

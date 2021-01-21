@@ -18,6 +18,5 @@ namespace Innoactive.Creator.BasicInteraction.Properties
         /// Instantaneously simulate that the object was used.
         /// </summary>
         void FastForwardUse();
-        
     }
 }

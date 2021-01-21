@@ -8,6 +8,7 @@ using Innoactive.Creator.Core.RestrictiveEnvironment;
 using Innoactive.Creator.Core.SceneObjects;
 using Innoactive.Creator.Core.Utils;
 using Innoactive.Creator.Core.Validation;
+using UnityEngine;
 
 namespace Innoactive.Creator.BasicInteraction.Conditions
 {
@@ -54,9 +55,18 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
 
         private class ActiveProcess : BaseActiveProcessOverCompletable<EntityData>
         {
+            private bool isGrabbed;
+
+            public override void Start()
+            {
+                base.Start();
+                isGrabbed = Data.GrabbableProperty.Value.IsGrabbed;
+                Data.GrabbableProperty.Value.Grabbed += (sender, args) => isGrabbed = true;
+            }
+
             protected override bool CheckIfCompleted()
             {
-                return Data.GrabbableProperty.Value.IsGrabbed;
+                return isGrabbed || Data.GrabbableProperty.Value.IsGrabbed;
             }
 
             public ActiveProcess(EntityData data) : base(data)
