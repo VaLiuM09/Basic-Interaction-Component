@@ -37,7 +37,7 @@ namespace Innoactive.Creator.BasicInteraction.RigSetup
         /// </summary>
         protected static InteractionRigProvider enforcedProvider = null;
         
-        private void Awake()
+        private void OnEnable()
         {
             InteractionRigProvider rigProvider = null;
             
@@ -149,9 +149,9 @@ namespace Innoactive.Creator.BasicInteraction.RigSetup
         }
 
         /// <summary>
-        /// Enforces the giving Rig to be used, if possible.
+        /// Enforces the given Rig to be used, if possible.
         /// </summary>
-        /// <param name="prefab">Prefab of the rig to be used.</param>
+        /// <param name="provider">Prefab of the rig to be used.</param>
         public static void SetEnforcedInteractionRig(InteractionRigProvider provider)
         {
             enforcedProvider = provider;
