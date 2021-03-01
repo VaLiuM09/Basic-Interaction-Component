@@ -13,6 +13,7 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
     /// Condition which is completed when TouchableProperty is touched.
     /// </summary>
     [DataContract(IsReference = true)]
+    [HelpLink("https://developers.innoactive.de/documentation/creator/latest/articles/innoactive-creator/default-conditions.html#touch-object")]
     public class TouchedCondition : Condition<TouchedCondition.EntityData>
     {
         [DisplayName("Touch Object")]
@@ -22,7 +23,7 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
             [CheckForCollider]
 #endif
             [DataMember]
-            [DisplayName("Touchable object")]
+            [DisplayName("Object")]
             public ScenePropertyReference<ITouchableProperty> TouchableProperty { get; set; }
 
             public bool IsCompleted { get; set; }

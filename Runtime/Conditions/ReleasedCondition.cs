@@ -13,6 +13,7 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
     /// Condition which is completed when `GrabbableProperty` becomes ungrabbed.
     /// </summary>
     [DataContract(IsReference = true)]
+    [HelpLink("https://developers.innoactive.de/documentation/creator/latest/articles/innoactive-creator/default-conditions.html#release-object")]
     public class ReleasedCondition : Condition<ReleasedCondition.EntityData>
     {
         [DisplayName("Release Object")]
@@ -22,7 +23,7 @@ namespace Innoactive.Creator.BasicInteraction.Conditions
             [CheckForCollider]
 #endif
             [DataMember]
-            [DisplayName("Grabbable object")]
+            [DisplayName("Object")]
             public ScenePropertyReference<IGrabbableProperty> GrabbableProperty { get; set; }
 
             public bool IsCompleted { get; set; }
