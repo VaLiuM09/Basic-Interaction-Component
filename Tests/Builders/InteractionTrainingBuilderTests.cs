@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
+using Innoactive.Creator.BasicInteraction;
 using Innoactive.Creator.Core.Properties;
 using Innoactive.Creator.BasicInteraction.Builders;
 using Innoactive.Creator.BasicInteraction.Conditions;
