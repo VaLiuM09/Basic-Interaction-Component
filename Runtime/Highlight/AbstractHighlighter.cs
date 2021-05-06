@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using Innoactive.Creator.Core.Properties;
+using VPG.Creator.Core.Properties;
 using UnityEngine;
 using UnityEngine.Rendering;
-using Innoactive.Creator.Unity;
+using VPG.Creator.Unity;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     /// <summary>
     /// Collects render information from a <see cref="IHighlighter"/> object and provides basic utilities for highlighting. 

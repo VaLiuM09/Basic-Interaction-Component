@@ -1,13 +1,13 @@
 ﻿using System;
 using NUnit.Framework;
 using System.Collections;
-using Innoactive.Creator.Core.Utils;
+using VPG.Creator.Core.Utils;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Innoactive.Creator.Tests.Utils;
+using VPG.Creator.Tests.Utils;
 using UnityEngine.Rendering;
 
-namespace Innoactive.Creator.BasicInteraction.Tests
+namespace VPG.Creator.BasicInteraction.Tests
 {
     public class HighlighterTests : RuntimeTests
     {

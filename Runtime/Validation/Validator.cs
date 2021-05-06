@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction.Validation
+namespace VPG.Creator.BasicInteraction.Validation
 {
     /// <summary>
     /// Base validator used to implement concrete validators.

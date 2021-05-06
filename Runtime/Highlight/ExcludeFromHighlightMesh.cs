@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     /// <summary>
     /// Can be added to GameObjects to exclude them from automatically generated highlights.

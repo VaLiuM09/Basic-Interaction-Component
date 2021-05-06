@@ -1,8 +1,8 @@
 ﻿using System;
-using Innoactive.Creator.Core.Properties;
-using Innoactive.Creator.Core.SceneObjects;
+using VPG.Creator.Core.Properties;
+using VPG.Creator.Core.SceneObjects;
 
-namespace Innoactive.Creator.BasicInteraction.Properties
+namespace VPG.Creator.BasicInteraction.Properties
 {
     /// <summary>
     /// Interface for <see cref="ISceneObjectProperty"/>s that can be used for teleport into.

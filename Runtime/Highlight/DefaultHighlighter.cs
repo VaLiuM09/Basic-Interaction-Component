@@ -5,9 +5,9 @@ using UnityEngine;
 
 
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
-    /// <inheritdoc cref="Innoactive.Creator.BasicInteraction.IHighlighter" />
+    /// <inheritdoc cref="VPG.Creator.BasicInteraction.IHighlighter" />
     /// <remarks>
     /// Highlights are always queued following a LIFO (Last In First Out) scheme. 
     /// </remarks>

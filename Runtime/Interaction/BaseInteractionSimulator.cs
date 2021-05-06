@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
-using Innoactive.Creator.Core.Utils;
+using VPG.Creator.Core.Utils;
 using UnityEngine.SceneManagement;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     /// <summary>
     /// Base interaction simulator, only have one concrete simulator implementation in your project.

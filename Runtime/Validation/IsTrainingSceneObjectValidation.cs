@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using Innoactive.Creator.Core.SceneObjects;
+using VPG.Creator.Core.SceneObjects;
 using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction.Validation
+namespace VPG.Creator.BasicInteraction.Validation
 {
     /// <summary>
     /// Checks if the training scene object attached to the given GameObject is listed as accepted trainin scene object.

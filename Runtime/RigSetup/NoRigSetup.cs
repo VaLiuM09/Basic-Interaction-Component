@@ -1,4 +1,4 @@
-﻿namespace Innoactive.Creator.BasicInteraction.RigSetup
+﻿namespace VPG.Creator.BasicInteraction.RigSetup
 {
     
     /// <summary>
