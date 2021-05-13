@@ -1,7 +1,7 @@
-﻿using Innoactive.Creator.Core.SceneObjects;
-using Innoactive.Creator.Core.Properties;
+﻿using VPG.Creator.Core.SceneObjects;
+using VPG.Creator.Core.Properties;
 
-namespace Innoactive.Creator.BasicInteraction.Properties
+namespace VPG.Creator.BasicInteraction.Properties
 {
     public interface ITouchableProperty : ISceneObjectProperty, ILockable
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Innoactive.CreatorEditor.BasicInteraction
+namespace VPG.CreatorEditor.BasicInteraction
 {
     /// <summary>
     /// This base class is supposed to be implemented by classes which will be called to setup the scene,

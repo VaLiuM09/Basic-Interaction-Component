@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     /// <summary>
     /// Base interface to determine that the given class is an interactable object.

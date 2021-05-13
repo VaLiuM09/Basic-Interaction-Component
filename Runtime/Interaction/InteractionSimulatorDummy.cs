@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     /// <summary>
     /// Interaction simulator dummy, does nothing beside of warning to there is no concrete implementation of a simulator.

@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Innoactive.Creator.BasicInteraction.Properties;
-using Innoactive.Creator.Core;
-using Innoactive.Creator.Core.Attributes;
-using Innoactive.Creator.Core.Conditions;
-using Innoactive.Creator.Core.RestrictiveEnvironment;
-using Innoactive.Creator.Core.SceneObjects;
-using Innoactive.Creator.Core.Utils;
-using Innoactive.Creator.Core.Validation;
+using VPG.Creator.BasicInteraction.Properties;
+using VPG.Creator.Core;
+using VPG.Creator.Core.Attributes;
+using VPG.Creator.Core.Conditions;
+using VPG.Creator.Core.RestrictiveEnvironment;
+using VPG.Creator.Core.SceneObjects;
+using VPG.Creator.Core.Utils;
+using VPG.Creator.Core.Validation;
 
-namespace Innoactive.Creator.BasicInteraction.Conditions
+namespace VPG.Creator.BasicInteraction.Conditions
 {
     /// <summary>
     /// Condition which is completed when `GrabbableProperty` is grabbed.

@@ -1,7 +1,7 @@
-﻿using Innoactive.Creator.BasicInteraction.Properties;
+﻿using VPG.Creator.BasicInteraction.Properties;
 using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     /// <summary>
     /// Base interface for SnapZone, if you add an custom interaction framework add this interface to your SnapZone implementation. 

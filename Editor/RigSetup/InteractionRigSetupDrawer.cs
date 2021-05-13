@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Innoactive.Creator.BasicInteraction.RigSetup;
-using Innoactive.Creator.Core.Utils;
+using VPG.Creator.BasicInteraction.RigSetup;
+using VPG.Creator.Core.Utils;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace Innoactive.CreatorEditor.BasicInteraction.RigSetup
+namespace VPG.CreatorEditor.BasicInteraction.RigSetup
 {
     
     [CustomEditor(typeof(InteractionRigSetup))]

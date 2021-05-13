@@ -1,8 +1,8 @@
-﻿using Innoactive.Creator.Core.Conditions;
-using Innoactive.Creator.BasicInteraction.Conditions;
-using Innoactive.CreatorEditor.UI.StepInspector.Menu;
+﻿using VPG.Creator.Core.Conditions;
+using VPG.Creator.BasicInteraction.Conditions;
+using VPG.CreatorEditor.UI.StepInspector.Menu;
 
-namespace Innoactive.CreatorEditor.BasicInteraction.UI.Conditions
+namespace VPG.CreatorEditor.BasicInteraction.UI.Conditions
 {
     /// <inheritdoc />
     public class TeleportMenuItem : MenuItem<ICondition>

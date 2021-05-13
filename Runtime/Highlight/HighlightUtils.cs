@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Innoactive.Creator.BasicInteraction
+namespace VPG.Creator.BasicInteraction
 {
     internal static class HighlightUtils
     {

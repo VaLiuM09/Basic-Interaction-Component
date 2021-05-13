@@ -1,10 +1,10 @@
 ﻿using System;
-using Innoactive.Creator.Core.Configuration.Modes;
-using Innoactive.Creator.Core.SceneObjects;
-using Innoactive.Creator.Core.Properties;
+using VPG.Creator.Core.Configuration.Modes;
+using VPG.Creator.Core.SceneObjects;
+using VPG.Creator.Core.Properties;
 using UnityEngine;
 
-namespace Innoactive.Creator.BasicInteraction.Properties
+namespace VPG.Creator.BasicInteraction.Properties
 {
     public interface ISnapZoneProperty : ISceneObjectProperty, ILockable
     {

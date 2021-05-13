@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using Innoactive.Creator.BasicInteraction.Conditions;
-using Innoactive.Creator.BasicInteraction.Properties;
-using Innoactive.Creator.Core.Configuration;
-using Innoactive.Creator.Core.SceneObjects;
-using Innoactive.Creator.Core.Utils;
-using Innoactive.Creator.Tests.Builder;
+using VPG.Creator.BasicInteraction.Conditions;
+using VPG.Creator.BasicInteraction.Properties;
+using VPG.Creator.Core.Configuration;
+using VPG.Creator.Core.SceneObjects;
+using VPG.Creator.Core.Utils;
+using VPG.Creator.Tests.Builder;
 
-namespace Innoactive.Creator.BasicInteraction.Builders
+namespace VPG.Creator.BasicInteraction.Builders
 {
     public static class InteractionDefaultSteps
     {
