@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
-using VPG.Creator.Core.Utils;
+using VPG.Core.Utils;
 using UnityEngine.SceneManagement;
 
-namespace VPG.Creator.BasicInteraction
+namespace VPG.BasicInteraction
 {
     /// <summary>
     /// Base interaction simulator, only have one concrete simulator implementation in your project.

@@ -1,4 +1,4 @@
-﻿namespace VPG.Creator.BasicInteraction.RigSetup
+﻿namespace VPG.BasicInteraction.RigSetup
 {
     
     /// <summary>

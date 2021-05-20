@@ -1,4 +1,4 @@
-namespace VPG.Creator.BasicInteraction
+namespace VPG.BasicInteraction
 {
     /// <summary>
     /// Objects inheriting this interface will be excluded from automatically generated highlights.

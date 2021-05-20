@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VPG.Creator.Core.Utils;
+using VPG.Core.Utils;
 using UnityEngine;
 
-namespace VPG.Creator.BasicInteraction.RigSetup
+namespace VPG.BasicInteraction.RigSetup
 {
     /// <summary>
     /// Will setup the interaction rig on awake. Priority is from top to bottom of the list, only rigs which full fill

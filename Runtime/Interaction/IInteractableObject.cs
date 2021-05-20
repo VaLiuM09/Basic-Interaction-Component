@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VPG.Creator.BasicInteraction
+namespace VPG.BasicInteraction
 {
     /// <summary>
     /// Base interface to determine that the given class is an interactable object.

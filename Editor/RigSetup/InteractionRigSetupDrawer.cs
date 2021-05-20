@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VPG.Creator.BasicInteraction.RigSetup;
-using VPG.Creator.Core.Utils;
+using VPG.BasicInteraction.RigSetup;
+using VPG.Core.Utils;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace VPG.CreatorEditor.BasicInteraction.RigSetup
+namespace VPG.Editor.BasicInteraction.RigSetup
 {
     
     [CustomEditor(typeof(InteractionRigSetup))]
-    internal class InteractionRigSetupDrawer : Editor
+    internal class InteractionRigSetupDrawer : UnityEditor.Editor
     {
         private readonly float lineHeight = EditorGUIUtility.singleLineHeight;
         

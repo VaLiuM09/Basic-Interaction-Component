@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using VPG.Creator.BasicInteraction.Conditions;
-using VPG.Creator.BasicInteraction.Properties;
-using VPG.Creator.Core.Configuration;
-using VPG.Creator.Core.SceneObjects;
-using VPG.Creator.Core.Utils;
-using VPG.Creator.Tests.Builder;
+using VPG.BasicInteraction.Conditions;
+using VPG.BasicInteraction.Properties;
+using VPG.Core.Configuration;
+using VPG.Core.SceneObjects;
+using VPG.Core.Utils;
+using VPG.Tests.Builder;
 
-namespace VPG.Creator.BasicInteraction.Builders
+namespace VPG.BasicInteraction.Builders
 {
     public static class InteractionDefaultSteps
     {

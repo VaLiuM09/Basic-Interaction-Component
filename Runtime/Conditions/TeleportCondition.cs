@@ -1,13 +1,13 @@
 using System.Runtime.Serialization;
-using VPG.Creator.Core;
-using VPG.Creator.Core.Utils;
-using VPG.Creator.Core.Validation;
-using VPG.Creator.Core.Attributes;
-using VPG.Creator.Core.Conditions;
-using VPG.Creator.Core.SceneObjects;
-using VPG.Creator.BasicInteraction.Properties;
+using VPG.Core;
+using VPG.Core.Utils;
+using VPG.Core.Validation;
+using VPG.Core.Attributes;
+using VPG.Core.Conditions;
+using VPG.Core.SceneObjects;
+using VPG.BasicInteraction.Properties;
 
-namespace VPG.Creator.BasicInteraction.Conditions
+namespace VPG.BasicInteraction.Conditions
 {
     /// <summary>
     /// Condition which is completed when a teleportation action was executed into the referenced <see cref="ITeleportationProperty"/>.

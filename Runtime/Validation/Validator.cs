@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace VPG.Creator.BasicInteraction.Validation
+namespace VPG.BasicInteraction.Validation
 {
     /// <summary>
     /// Base validator used to implement concrete validators.
