@@ -1,8 +1,8 @@
-﻿using VPG.Creator.BasicInteraction.Conditions;
-using VPG.Creator.Core.Conditions;
-using VPG.CreatorEditor.UI.StepInspector.Menu;
+﻿using VPG.BasicInteraction.Conditions;
+using VPG.Core.Conditions;
+using VPG.Editor.UI.StepInspector.Menu;
 
-namespace VPG.CreatorEditor.BasicInteraction.UI.Conditions
+namespace VPG.Editor.BasicInteraction.UI.Conditions
 {
     public class UsedMenuItem : MenuItem<ICondition>
     {

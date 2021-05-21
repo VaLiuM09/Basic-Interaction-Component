@@ -1,8 +1,8 @@
-﻿using VPG.Creator.BasicInteraction.RigSetup;
-using VPG.Creator.Core.Properties;
+﻿using VPG.BasicInteraction.RigSetup;
+using VPG.Core.Properties;
 using UnityEngine;
 
-namespace VPG.CreatorEditor.BasicInteraction.RigSetup
+namespace VPG.Editor.BasicInteraction.RigSetup
 {
     /// <summary>
     /// Setups the rig loader, cleans up the scene and creates a dummy trainee. 
