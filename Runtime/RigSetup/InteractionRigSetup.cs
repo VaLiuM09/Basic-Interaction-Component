@@ -112,9 +112,13 @@ namespace VPG.BasicInteraction.RigSetup
             // On initializing the list we want to move none to lowest priority.
             if (isFirstTime)
             {
-                RigInfo rigInfo = rigs.Find(info => info.Name == "<None>");
-                rigs.Remove(rigInfo);
-                rigs.Add(rigInfo);
+                RigInfo rigLegacy = rigs.Find(info => info.Name == "XR Legacy Rig");
+                rigs.Remove(rigLegacy);
+                rigs.Add(rigLegacy);
+
+                RigInfo rigNone = rigs.Find(info => info.Name == "<None>");
+                rigs.Remove(rigNone);
+                rigs.Add(rigNone);
             }
             
             OrderFoundProvider(foundProvider);
